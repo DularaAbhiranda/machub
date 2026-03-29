@@ -1,0 +1,2224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MacHub – Premium Mac Devices in Sri Lanka</title>
+  <meta name="description" content="MacHub – Your trusted destination for premium Apple MacBook devices in Sri Lanka. Shop the latest MacBook Air, MacBook Pro, and more." />
+  <link rel="icon" type="image/png" href="MacHub_ Primary Logo image Transparent.png" />
+  <link rel="shortcut icon" type="image/png" href="MacHub_ Primary Logo image Transparent.png" />
+  <link rel="apple-touch-icon" href="MacHub_ Primary Logo image Transparent.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* ─── CUSTOM FONTS ─────────────────────────────── */
+    @font-face {
+      font-family: 'Rushblade';
+      src: url('fonts/Rushblade.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Square721';
+      src: url('fonts/Square721 BT Roman.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* ─── RESET & BASE ─────────────────────────────── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --black:   #000000;
+      --white:   #ffffff;
+      --gray1:   #1a1a1a;
+      --gray2:   #2a2a2a;
+      --gray3:   #3a3a3a;
+      --gray4:   #888888;
+      --accent:  #ffffff;
+      --apple-silver: #e8e8e3;
+      --transition: 0.4s cubic-bezier(.4,0,.2,1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--black);
+      color: var(--white);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    /* ─── SCROLLBAR ────────────────────────────────── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--black); }
+    ::-webkit-scrollbar-thumb { background: var(--gray3); border-radius: 3px; }
+
+    /* ─── ANNOUNCEMENT BAR ─────────────────────────── */
+    .announcement-bar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1100;
+      background: var(--white);
+      color: var(--black);
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .announcement-bar span.dot-live {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #e74c3c;
+      animation: livePulse 1.4s ease-in-out infinite;
+    }
+
+    @keyframes livePulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(231,76,60,0.5); }
+      50%       { box-shadow: 0 0 0 6px rgba(231,76,60,0); }
+    }
+
+    .announcement-bar .bar-close {
+      position: absolute;
+      right: 16px;
+      cursor: pointer;
+      font-size: 1rem;
+      opacity: 0.5;
+      transition: opacity 0.2s;
+      border: none;
+      background: none;
+      color: var(--black);
+      line-height: 1;
+    }
+
+    .announcement-bar .bar-close:hover { opacity: 1; }
+
+    /* shift navbar + body down when bar is visible */
+    body.bar-visible .navbar { top: 40px; }
+    body.bar-visible { padding-top: 40px; }
+
+    /* ─── COMING SOON – COUNTDOWN ──────────────────── */
+    .cs-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 50px;
+      padding: 5px 14px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      backdrop-filter: blur(12px);
+      animation: csLabelGlow 3s ease-in-out infinite;
+    }
+
+    @keyframes csLabelGlow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(255,255,255,0.1); }
+      50%       { box-shadow: 0 0 20px 4px rgba(255,255,255,0.12); }
+    }
+
+    .cs-label .pulse-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #4ade80;
+      animation: livePulse2 1.6s ease-in-out infinite;
+    }
+
+    @keyframes livePulse2 {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(74,222,128,0.6); }
+      50%       { box-shadow: 0 0 0 5px rgba(74,222,128,0); }
+    }
+
+    .hero-cs-heading {
+      font-size: clamp(1.6rem, 3vw, 2.6rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 10px;
+    }
+
+    .hero-cs-heading .line-muted {
+      display: block;
+      color: rgba(255,255,255,0.35);
+      font-size: 0.65em;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 2px;
+    }
+
+    /* Countdown */
+    .countdown-wrapper {
+      margin: 16px 0 0;
+      width: 100%;
+    }
+
+    .countdown-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.38);
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .countdown {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: nowrap;
+    }
+
+    .cd-block {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 12px;
+      padding: 11px 10px 9px;
+      flex: 1;
+      text-align: center;
+      transition: border-color 0.3s, background 0.3s;
+    }
+
+    .cd-block:hover {
+      border-color: rgba(255,255,255,0.28);
+      background: rgba(255,255,255,0.12);
+    }
+
+    .cd-num {
+      font-size: clamp(1.2rem, 2.2vw, 1.8rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .cd-unit {
+      font-size: 0.58rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.38);
+      margin-top: 7px;
+    }
+
+    .cd-sep {
+      font-size: 1.3rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.2);
+      align-self: center;
+      margin-top: -6px;
+      flex-shrink: 0;
+    }
+
+    .hero-divider {
+      width: 100%;
+      height: 1px;
+      background: rgba(255,255,255,0.1);
+      margin: 18px 0;
+    }
+
+    .hero-right-tagline {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.38);
+      text-align: center;
+      line-height: 1.6;
+      letter-spacing: 0.01em;
+    }
+
+    .hero-right-tagline strong {
+      color: rgba(255,255,255,0.7);
+      font-weight: 600;
+    }
+
+    /* sneak peek label */
+    .sneak-peek-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 56px;
+    }
+
+    .sneak-peek-bar .sp-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 50px;
+      padding: 6px 16px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .sneak-peek-bar .sp-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, rgba(255,255,255,0.12), transparent);
+    }
+
+    /* ─── NAVBAR ───────────────────────────────────── */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      height: 70px;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: background var(--transition);
+    }
+
+    .navbar.scrolled {
+      background: rgba(0,0,0,0.97);
+    }
+
+    /* Logo */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-icon {
+      width: 52px;
+      height: 52px;
+      flex-shrink: 0;
+      object-fit: contain;
+    }
+
+    .hero-logo {
+      width: 82px;
+      height: 82px;
+      object-fit: contain;
+      margin-bottom: 16px;
+      filter: drop-shadow(0 4px 20px rgba(255,255,255,0.15));
+    }
+
+    .logo-text-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      line-height: 1;
+    }
+
+    .logo-text {
+      font-family: 'Rushblade', 'Inter', sans-serif;
+      font-size: 1.45rem;
+      font-weight: normal;
+      letter-spacing: 0.05em;
+      line-height: 1;
+      color: var(--white);
+    }
+
+    .logo-slogan {
+      font-family: 'Square721', 'Inter', sans-serif;
+      font-size: 0.6rem;
+      font-weight: normal;
+      letter-spacing: 0.14em;
+      color: var(--gray4);
+      line-height: 1;
+    }
+
+    /* Nav links */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.75);
+      transition: color var(--transition);
+      letter-spacing: 0.01em;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+
+    .nav-cta {
+      background: var(--white);
+      color: var(--black) !important;
+      padding: 9px 20px;
+      border-radius: 50px;
+      font-weight: 600 !important;
+      transition: background var(--transition), transform var(--transition) !important;
+    }
+
+    .nav-cta:hover {
+      background: #ddd !important;
+      transform: scale(1.04);
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile menu */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 70px; left: 0; right: 0;
+      background: rgba(0,0,0,0.97);
+      backdrop-filter: blur(20px);
+      padding: 30px 5% 40px;
+      z-index: 999;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      transform: translateY(-10px);
+      opacity: 0;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .mobile-menu.open {
+      display: block;
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .mobile-menu ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .mobile-menu a {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.85);
+    }
+
+    /* ─── HERO SLIDER ──────────────────────────────── */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 700px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding-top: 70px; /* offset for fixed navbar */
+    }
+
+    .hero-slides {
+      position: absolute;
+      inset: 0;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1.4s ease-in-out;
+      transform: scale(1.05);
+      animation: kenburns 8s ease-in-out infinite alternate;
+    }
+
+    .slide.active { opacity: 1; }
+
+    @keyframes kenburns {
+      from { transform: scale(1.05); }
+      to   { transform: scale(1); }
+    }
+
+    .slide-1 { background-image: url('https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=1920&q=80'); }
+    .slide-2 { background-image: url('https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=1920&q=80'); }
+    .slide-3 { background-image: url('https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=1920&q=80'); }
+    .slide-4 { background-image: url('https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=1920&q=80'); }
+
+    /* Dark overlay */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(0,0,0,0.78) 0%,
+        rgba(0,0,0,0.45) 60%,
+        rgba(0,0,0,0.65) 100%
+      );
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 8%;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    /* ── Hero Left Column ── */
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 50px;
+      padding: 6px 16px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-badge i { color: #f5f5f5; font-size: 0.75rem; }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 4.5vw, 4.8rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--gray4);
+    }
+
+    .hero-left p {
+      font-size: clamp(0.9rem, 1.6vw, 1.05rem);
+      color: rgba(255,255,255,0.65);
+      max-width: 440px;
+      margin-bottom: 36px;
+      font-weight: 400;
+      line-height: 1.75;
+    }
+
+    /* ── Hero Right Column ── */
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-right-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 22px;
+      padding: 28px 28px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+      max-width: 380px;
+      box-shadow: 0 16px 60px rgba(0,0,0,0.4);
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .hero-buttons.single {
+      justify-content: flex-start;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--white);
+      color: var(--black);
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.01em;
+      transition: transform 0.25s, background 0.25s;
+    }
+
+    .btn-primary:hover { transform: scale(1.05); background: #e8e8e8; }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--white);
+      padding: 14px 32px;
+      border-radius: 50px;
+      border: 1.5px solid rgba(255,255,255,0.4);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: border-color 0.25s, background 0.25s, transform 0.25s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--white);
+      background: rgba(255,255,255,0.08);
+      transform: scale(1.04);
+    }
+
+    /* Slide indicators */
+    .slide-indicators {
+      position: absolute;
+      bottom: 36px;
+      left: 8%;
+      z-index: 2;
+      display: flex;
+      gap: 10px;
+    }
+
+    .dot {
+      width: 28px;
+      height: 3px;
+      border-radius: 2px;
+      background: rgba(255,255,255,0.3);
+      cursor: pointer;
+      transition: background 0.4s, width 0.4s;
+    }
+
+    .dot.active { background: var(--white); width: 44px; }
+
+    /* Scroll indicator */
+    .scroll-hint {
+      position: absolute;
+      bottom: 36px;
+      right: 8%;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.4; transform: scaleY(1); }
+      50%       { opacity: 1;   transform: scaleY(1.2); }
+    }
+
+    /* ─── SECTION COMMON ───────────────────────────── */
+    section { padding: 100px 8%; }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray4);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+
+    .section-sub {
+      color: rgba(255,255,255,0.55);
+      font-size: 1.05rem;
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    /* Divider */
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(255,255,255,0.08), transparent);
+    }
+
+    /* ─── ABOUT ────────────────────────────────────── */
+    .about {
+      background: var(--gray1);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .stat-card {
+      background: var(--gray2);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      padding: 28px 24px;
+      transition: border-color var(--transition), transform var(--transition);
+    }
+
+    .stat-card:hover {
+      border-color: rgba(255,255,255,0.18);
+      transform: translateY(-4px);
+    }
+
+    .stat-card .num {
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-card .num span { color: var(--gray4); font-size: 1.6rem; }
+
+    .stat-card .label {
+      font-size: 0.82rem;
+      color: var(--gray4);
+      font-weight: 500;
+    }
+
+    .about-visual {
+      position: relative;
+    }
+
+    .about-img-wrapper {
+      border-radius: 24px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .about-img-wrapper img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      filter: brightness(0.9);
+      transition: transform 0.8s ease;
+    }
+
+    .about-img-wrapper:hover img { transform: scale(1.04); }
+
+    .about-badge {
+      position: absolute;
+      bottom: -20px;
+      left: -20px;
+      background: var(--white);
+      color: var(--black);
+      border-radius: 18px;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+
+    .about-badge i {
+      font-size: 2rem;
+    }
+
+    .about-badge .badge-text strong {
+      display: block;
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .about-badge .badge-text span {
+      font-size: 0.78rem;
+      color: #555;
+    }
+
+    /* ─── PRODUCTS ─────────────────────────────────── */
+    .products { background: var(--black); }
+
+    .products-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 56px;
+      gap: 24px;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .product-card {
+      background: var(--gray1);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+      cursor: pointer;
+    }
+
+    .product-card:hover {
+      border-color: rgba(255,255,255,0.2);
+      transform: translateY(-8px);
+      box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+    }
+
+    .product-img {
+      height: 220px;
+      overflow: hidden;
+      background: var(--gray2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+      filter: brightness(0.9);
+    }
+
+    .product-card:hover .product-img img { transform: scale(1.06); }
+
+    .product-info {
+      padding: 26px 28px 28px;
+    }
+
+    .product-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 50px;
+      padding: 4px 12px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gray4);
+      margin-bottom: 12px;
+    }
+
+    .product-tag.hot { background: rgba(255,255,255,0.15); color: var(--white); border-color: rgba(255,255,255,0.25); }
+
+    .product-info h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+
+    .product-info p {
+      font-size: 0.88rem;
+      color: var(--gray4);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .product-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--white);
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+      padding-bottom: 2px;
+      transition: border-color var(--transition), gap var(--transition);
+    }
+
+    .product-card:hover .product-cta { gap: 10px; border-color: var(--white); }
+
+    /* ─── WHY US ────────────────────────────────────── */
+    .why {
+      background: var(--gray1);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 56px;
+    }
+
+    .why-card {
+      background: var(--gray2);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 20px;
+      padding: 36px 32px;
+      transition: border-color var(--transition), transform var(--transition);
+    }
+
+    .why-card:hover {
+      border-color: rgba(255,255,255,0.18);
+      transform: translateY(-6px);
+    }
+
+    .why-icon {
+      width: 52px;
+      height: 52px;
+      background: var(--gray3);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 22px;
+      font-size: 1.4rem;
+      color: var(--white);
+      transition: background var(--transition);
+    }
+
+    .why-card:hover .why-icon { background: rgba(255,255,255,0.15); }
+
+    .why-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+
+    .why-card p {
+      font-size: 0.88rem;
+      color: var(--gray4);
+      line-height: 1.65;
+    }
+
+    /* ─── REVIEW CTA ────────────────────────────────── */
+    .review-cta {
+      background: var(--black);
+      text-align: center;
+      padding: 80px 8%;
+    }
+
+    .review-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 20px;
+      background: var(--gray1);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 32px 48px;
+      transition: border-color var(--transition);
+    }
+
+    .review-box:hover { border-color: rgba(255,255,255,0.2); }
+
+    .stars { color: #f5c518; font-size: 1.4rem; letter-spacing: 4px; }
+
+    .review-box-text h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .review-box-text p {
+      font-size: 0.85rem;
+      color: var(--gray4);
+    }
+
+    .review-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--white);
+      color: var(--black);
+      padding: 12px 26px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      transition: background 0.25s, transform 0.25s;
+    }
+
+    .review-btn:hover { background: #e0e0e0; transform: scale(1.04); }
+
+    /* ─── SOCIAL ────────────────────────────────────── */
+    .social-section {
+      background: var(--gray1);
+      text-align: center;
+      padding: 80px 8%;
+    }
+
+    .social-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--gray2);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 50px;
+      padding: 12px 24px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--white);
+      transition: background var(--transition), border-color var(--transition), transform var(--transition);
+    }
+
+    .social-link:hover {
+      background: var(--gray3);
+      border-color: rgba(255,255,255,0.2);
+      transform: translateY(-3px);
+    }
+
+    .social-link i { font-size: 1.1rem; }
+    .social-link.fb i { color: #1877f2; }
+    .social-link.ig i { color: #e1306c; }
+    .social-link.tt i { color: #ffffff; }
+
+    /* ─── CONTACT ───────────────────────────────────── */
+    .contact {
+      background: var(--black);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .contact-info-items {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      background: var(--gray1);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+      padding: 18px 22px;
+      transition: border-color var(--transition), transform var(--transition);
+    }
+
+    .contact-item:hover {
+      border-color: rgba(255,255,255,0.16);
+      transform: translateX(6px);
+    }
+
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--gray2);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-icon.whatsapp { background: rgba(37,211,102,0.15); color: #25d366; }
+    .contact-icon.phone   { background: rgba(255,255,255,0.08); color: var(--white); }
+    .contact-icon.email   { background: rgba(255,255,255,0.08); color: var(--white); }
+    .contact-icon.maps    { background: rgba(255,255,255,0.08); color: var(--white); }
+
+    .contact-item-text strong {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gray4);
+      margin-bottom: 2px;
+    }
+
+    .contact-item-text a, .contact-item-text span {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--white);
+    }
+
+    /* Contact form */
+    .contact-form-wrapper {
+      background: var(--gray1);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 24px;
+      padding: 40px 36px;
+    }
+
+    .contact-form-wrapper h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .contact-form-wrapper p {
+      font-size: 0.88rem;
+      color: var(--gray4);
+      margin-bottom: 30px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gray4);
+      margin-bottom: 8px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      background: var(--gray2);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 13px 16px;
+      font-size: 0.92rem;
+      color: var(--white);
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.25s;
+    }
+
+    .form-group select option { background: var(--gray2); }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: rgba(255,255,255,0.35);
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: var(--gray4); }
+
+    .form-group textarea { resize: vertical; min-height: 110px; }
+
+    .form-submit {
+      width: 100%;
+      background: var(--white);
+      color: var(--black);
+      border: none;
+      border-radius: 50px;
+      padding: 14px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background 0.25s, transform 0.25s;
+      margin-top: 8px;
+    }
+
+    .form-submit:hover { background: #ddd; transform: scale(1.02); }
+
+    /* ─── FOOTER ────────────────────────────────────── */
+    footer {
+      background: var(--gray1);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 60px 8% 40px;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 60px;
+      padding-bottom: 50px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      margin-bottom: 36px;
+    }
+
+    .footer-brand p {
+      font-size: 0.88rem;
+      color: var(--gray4);
+      line-height: 1.7;
+      margin-top: 16px;
+      max-width: 300px;
+    }
+
+    .footer-col h4 {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gray4);
+      margin-bottom: 18px;
+    }
+
+    .footer-col ul { list-style: none; }
+
+    .footer-col ul li { margin-bottom: 12px; }
+
+    .footer-col ul li a {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.65);
+      transition: color 0.25s;
+    }
+
+    .footer-col ul li a:hover { color: var(--white); }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-bottom p {
+      font-size: 0.82rem;
+      color: var(--gray4);
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 14px;
+    }
+
+    .footer-social a {
+      width: 36px;
+      height: 36px;
+      background: var(--gray2);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      color: var(--gray4);
+      transition: background 0.25s, color 0.25s, border-color 0.25s;
+    }
+
+    .footer-social a:hover {
+      background: var(--gray3);
+      color: var(--white);
+      border-color: rgba(255,255,255,0.16);
+    }
+
+    /* ─── FLOATING WHATSAPP ────────────────────────── */
+    .wa-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 998;
+      width: 58px;
+      height: 58px;
+      background: #25d366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      color: var(--white);
+      box-shadow: 0 8px 32px rgba(37,211,102,0.45);
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: waPulse 2.5s ease-in-out infinite;
+    }
+
+    .wa-float:hover {
+      transform: scale(1.12);
+      box-shadow: 0 12px 40px rgba(37,211,102,0.6);
+      animation: none;
+    }
+
+    @keyframes waPulse {
+      0%, 100% { box-shadow: 0 8px 32px rgba(37,211,102,0.45); }
+      50%       { box-shadow: 0 8px 48px rgba(37,211,102,0.7); }
+    }
+
+    /* ─── REVEAL ANIMATION ─────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* staggered children */
+    .reveal-stagger > * {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal-stagger.visible > *:nth-child(1) { opacity:1; transform:none; transition-delay:0s; }
+    .reveal-stagger.visible > *:nth-child(2) { opacity:1; transform:none; transition-delay:0.1s; }
+    .reveal-stagger.visible > *:nth-child(3) { opacity:1; transform:none; transition-delay:0.2s; }
+    .reveal-stagger.visible > *:nth-child(4) { opacity:1; transform:none; transition-delay:0.3s; }
+    .reveal-stagger.visible > *:nth-child(5) { opacity:1; transform:none; transition-delay:0.4s; }
+    .reveal-stagger.visible > *:nth-child(6) { opacity:1; transform:none; transition-delay:0.5s; }
+
+    /* ─── TOAST ─────────────────────────────────────── */
+    .toast {
+      position: fixed;
+      bottom: 100px;
+      right: 30px;
+      background: var(--gray1);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px;
+      padding: 16px 22px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      z-index: 9999;
+      transform: translateY(20px);
+      opacity: 0;
+      transition: all 0.4s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      max-width: 280px;
+    }
+
+    .toast.show { transform: translateY(0); opacity: 1; }
+    .toast i { color: #25d366; font-size: 1.1rem; }
+
+    /* ═══════════════════════════════════════════════
+       RESPONSIVE — 6 Breakpoints
+       1280 · 1024 · 768 · 640 · 480 · 375
+    ═══════════════════════════════════════════════ */
+
+    /* ── 1280px  Large laptop ────────────────────── */
+    @media (max-width: 1280px) {
+      .hero-content   { gap: 44px; }
+      .about          { gap: 60px; }
+      .contact        { gap: 60px; }
+      .footer-top     { gap: 44px; }
+    }
+
+    /* ── 1024px  Tablet landscape / small laptop ── */
+    @media (max-width: 1024px) {
+      section { padding: 80px 6%; }
+
+      /* Hero – stack columns */
+      .hero-content       { grid-template-columns: 1fr; gap: 32px; padding: 0 6%; }
+      .hero h1            { font-size: clamp(2.2rem, 5vw, 3.6rem); }
+      .hero-right         { align-items: stretch; }
+      .hero-right-card    { max-width: 100%; padding: 26px 28px; }
+
+      /* Grids */
+      .products-grid  { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      .why-grid       { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+      .about          { grid-template-columns: 1fr; gap: 48px; }
+      .contact        { grid-template-columns: 1fr; gap: 40px; }
+      .footer-top     { grid-template-columns: 1fr 1fr; gap: 36px; }
+
+      /* About visual */
+      .about-img-wrapper img { height: 380px; }
+      .about-badge           { left: 0; bottom: -16px; }
+
+      /* Sections */
+      .section-title  { font-size: 2.4rem; }
+    }
+
+    /* ── 768px  Tablet portrait ──────────────────── */
+    @media (max-width: 768px) {
+      section { padding: 70px 5%; }
+
+      /* Navbar */
+      .nav-links  { display: none; }
+      .hamburger  { display: flex; }
+      .navbar     { padding: 0 5%; }
+
+      /* Hero */
+      .hero               { min-height: 620px; }
+      .hero-content       { padding: 0 5%; gap: 28px; }
+      .hero-right-card    { padding: 24px 22px; border-radius: 18px; }
+      .hero-logo          { width: 64px; height: 64px; }
+      .hero h1            { font-size: 2.4rem; }
+
+      /* Countdown */
+      .countdown  { gap: 8px; }
+      .cd-num     { font-size: 1.4rem; }
+      .cd-block   { padding: 11px 8px 9px; }
+      .cd-sep     { font-size: 1.1rem; }
+
+      /* Grids – keep 2-col on tablet */
+      .products-grid  { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .why-grid       { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+
+      .products-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+
+      /* About */
+      .about-stats            { grid-template-columns: repeat(2, 1fr); }
+      .about-img-wrapper img  { height: 320px; }
+      .about-badge            { left: 8px; bottom: -12px; padding: 14px 18px; }
+      .about-badge i          { font-size: 1.6rem; }
+      .about-badge .badge-text strong { font-size: 0.95rem; }
+
+      /* Review */
+      .review-box { flex-direction: column; text-align: center; padding: 28px 20px; gap: 14px; }
+
+      /* Social */
+      .social-links   { gap: 12px; }
+      .social-link    { padding: 10px 18px; font-size: 0.84rem; }
+
+      /* Contact */
+      .contact-form-wrapper { padding: 28px 22px; }
+      .contact-item         { padding: 14px 18px; }
+
+      /* Footer */
+      .footer-top     { grid-template-columns: 1fr 1fr; gap: 30px; padding-bottom: 40px; }
+      .footer-bottom  { flex-direction: column; text-align: center; gap: 16px; }
+
+      /* WhatsApp float */
+      .wa-float { bottom: 20px; right: 20px; width: 52px; height: 52px; font-size: 1.4rem; }
+    }
+
+    /* ── 640px  Large phone / landscape phone ─────── */
+    @media (max-width: 640px) {
+      section { padding: 60px 5%; }
+
+      /* Hero */
+      .hero-logo      { width: 56px; height: 56px; margin-bottom: 12px; }
+      .hero-badge     { font-size: 0.72rem; padding: 5px 12px; margin-bottom: 14px; }
+      .hero h1        { font-size: 2rem; }
+      .hero-left p    { font-size: 0.9rem; }
+      .hero-cs-heading { font-size: 1.5rem; }
+
+      /* Grids – go 1-col */
+      .products-grid  { grid-template-columns: 1fr; }
+      .why-grid       { grid-template-columns: 1fr; }
+
+      /* Footer – full single column */
+      .footer-top     { grid-template-columns: 1fr; gap: 28px; }
+
+      /* Section titles */
+      .section-title  { font-size: 1.9rem; }
+
+      /* About badge */
+      .about-badge  { padding: 12px 16px; left: 6px; bottom: -12px; }
+    }
+
+    /* ── 480px  Phone portrait ───────────────────── */
+    @media (max-width: 480px) {
+      section { padding: 56px 4%; }
+
+      /* Navbar */
+      .navbar     { padding: 0 4%; }
+      .logo-icon  { width: 40px; height: 40px; }
+      .logo-text  { font-size: 1.2rem; }
+      .logo-slogan { font-size: 0.54rem; }
+
+      /* Hero */
+      .hero           { min-height: 560px; }
+      .hero-content   { padding: 0 4%; gap: 22px; }
+      .hero-logo      { width: 50px; height: 50px; margin-bottom: 10px; }
+      .hero h1        { font-size: 1.85rem; letter-spacing: -0.02em; }
+      .hero-left p    { font-size: 0.88rem; margin-bottom: 24px; }
+      .hero-badge     { font-size: 0.68rem; padding: 4px 11px; }
+      .hero-right-card { padding: 18px 16px; border-radius: 14px; }
+      .hero-cs-heading { font-size: 1.35rem; }
+      .hero-divider   { margin: 14px 0; }
+      .hero-right-tagline { font-size: 0.66rem; }
+
+      /* Countdown */
+      .countdown  { gap: 5px; }
+      .cd-block   { padding: 9px 6px 8px; border-radius: 10px; }
+      .cd-num     { font-size: 1.2rem; }
+      .cd-sep     { font-size: 1rem; margin-top: -4px; }
+      .cd-unit    { font-size: 0.52rem; margin-top: 5px; }
+      .countdown-label { font-size: 0.6rem; margin-bottom: 8px; }
+      .countdown-wrapper { margin: 12px 0 0; }
+
+      /* Buttons */
+      .hero-buttons           { flex-direction: column; width: 100%; }
+      .btn-primary,
+      .btn-secondary          { width: 100%; justify-content: center; padding: 13px 20px; font-size: 0.9rem; }
+
+      /* About */
+      .about-stats    { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+      .stat-card      { padding: 20px 14px; }
+      .stat-card .num { font-size: 1.9rem; }
+
+      /* Why cards */
+      .why-card { padding: 28px 22px; }
+
+      /* Products */
+      .product-img    { height: 180px; }
+      .product-info   { padding: 20px 18px 22px; }
+
+      /* Social */
+      .social-links   { flex-direction: column; align-items: stretch; gap: 10px; }
+      .social-link    { justify-content: center; }
+
+      /* Contact */
+      .contact-form-wrapper { padding: 20px 16px; }
+      .contact-item         { padding: 13px 14px; gap: 12px; }
+      .contact-icon         { width: 38px; height: 38px; font-size: 0.95rem; }
+
+      /* Review */
+      .review-box  { padding: 22px 16px; }
+      .review-btn  { padding: 10px 16px; font-size: 0.8rem; }
+
+      /* Footer */
+      .footer-top     { padding-bottom: 32px; }
+      .footer-bottom p { font-size: 0.75rem; }
+    }
+
+    /* ── 375px  Small phone (iPhone SE etc.) ─────── */
+    @media (max-width: 375px) {
+      section { padding: 48px 4%; }
+
+      /* Navbar */
+      .logo-icon   { width: 34px; height: 34px; }
+      .logo-text   { font-size: 1.05rem; }
+      .logo-slogan { font-size: 0.48rem; }
+
+      /* Hero */
+      .hero h1            { font-size: 1.65rem; }
+      .hero-cs-heading    { font-size: 1.2rem; }
+      .hero-right-card    { padding: 16px 14px; }
+
+      /* Countdown */
+      .countdown  { gap: 4px; }
+      .cd-block   { padding: 8px 5px 7px; border-radius: 8px; }
+      .cd-num     { font-size: 1.05rem; }
+      .cd-sep     { font-size: 0.9rem; }
+      .cd-unit    { font-size: 0.48rem; }
+
+      /* Section */
+      .section-title { font-size: 1.65rem; }
+
+      /* About */
+      .stat-card      { padding: 16px 12px; }
+      .stat-card .num { font-size: 1.7rem; }
+
+      /* Why */
+      .why-icon { width: 44px; height: 44px; font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAVBAR ═══════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <a href="#" class="logo">
+      <img src="MacHub_ Secondary Logo image Transparent.png" class="logo-icon" alt="MacHub Logo" />
+      <div class="logo-text-wrap">
+        <span class="logo-text">&nbsp;MacHub</span>
+        <span class="logo-slogan">-Power Your Dreams-</span>
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="https://wa.me/94711818880" target="_blank" class="nav-cta"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+    </ul>
+
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about"    onclick="closeMenu()">About</a></li>
+      <li><a href="#products" onclick="closeMenu()">Products</a></li>
+      <li><a href="#why"      onclick="closeMenu()">Why Us</a></li>
+      <li><a href="#contact"  onclick="closeMenu()">Contact</a></li>
+      <li><a href="https://wa.me/94711818880" target="_blank">WhatsApp Us</a></li>
+    </ul>
+  </div>
+
+  <!-- ═══ HERO ══════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-slides">
+      <div class="slide slide-1 active"></div>
+      <div class="slide slide-2"></div>
+      <div class="slide slide-3"></div>
+      <div class="slide slide-4"></div>
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+      <!-- ── LEFT: Brand & Text ── -->
+      <div class="hero-left">
+        
+
+        <div class="hero-badge">
+          <i class="fab fa-apple"></i>
+          Sri Lanka's Mac Destination
+        </div>
+
+        <h1>Premium Macs.<br><em>Trusted Source.</em></h1>
+
+        <p>MacHub brings you the finest Apple MacBook lineup in Sri Lanka — authentic, quality-checked, and backed by real support.</p>
+
+        <div class="hero-buttons single">
+          <a href="#products" class="btn-primary">
+            <i class="fab fa-apple"></i> Browse Devices
+          </a>
+        </div>
+      </div>
+
+      <!-- ── RIGHT: Coming Soon & Countdown ── -->
+      <div class="hero-right">
+        <div class="hero-right-card">
+
+          <div class="cs-label">
+            <span class="pulse-dot"></span>
+            Website Launching Soon
+          </div>
+
+          <h2 class="hero-cs-heading">
+            <span class="line-muted">MacHub is</span>
+            Coming Soon.
+          </h2>
+
+          <div class="countdown-wrapper">
+            <p class="countdown-label">Launching in</p>
+            <div class="countdown" id="countdown">
+              <div class="cd-block"><div class="cd-num" id="cd-days">00</div><div class="cd-unit">Days</div></div>
+              <div class="cd-sep">:</div>
+              <div class="cd-block"><div class="cd-num" id="cd-hours">00</div><div class="cd-unit">Hours</div></div>
+              <div class="cd-sep">:</div>
+              <div class="cd-block"><div class="cd-num" id="cd-mins">00</div><div class="cd-unit">Mins</div></div>
+              <div class="cd-sep">:</div>
+              <div class="cd-block"><div class="cd-num" id="cd-secs">00</div><div class="cd-unit">Secs</div></div>
+            </div>
+          </div>
+
+          <div class="hero-divider"></div>
+
+          <p class="hero-right-tagline">
+            Follow us for early access &amp; exclusive deals<br>
+            <strong>@machub</strong> on Instagram, Facebook &amp; TikTok
+          </p>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="slide-indicators" id="slideIndicators">
+      <div class="dot active" onclick="goToSlide(0)"></div>
+      <div class="dot" onclick="goToSlide(1)"></div>
+      <div class="dot" onclick="goToSlide(2)"></div>
+      <div class="dot" onclick="goToSlide(3)"></div>
+    </div>
+
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══ ABOUT ═════════════════════════════════════════ -->
+  <section class="about" id="about">
+    <div class="about-left">
+      <p class="section-label reveal">Our Story</p>
+      <h2 class="section-title reveal">Your Trusted<br>Mac Partner in<br>Sri Lanka</h2>
+      <p class="section-sub reveal">MacHub was founded with a single mission to make premium Apple MacBooks accessible to everyone in Sri Lanka. We source genuine devices, provide honest advice, and deliver outstanding after-sale support.</p>
+
+      <div class="about-stats reveal-stagger">
+        <div class="stat-card">
+          <div class="num">100<span>%</span></div>
+          <div class="label">Authentic Devices</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">100<span>+</span></div>
+          <div class="label">Happy Customers</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">24<span>h</span></div>
+          <div class="label">WhatsApp Support</div>
+        </div>
+        <div class="stat-card">
+          <div class="num">5<span>★</span></div>
+          <div class="label">Google Rating</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-visual reveal">
+      <div class="about-img-wrapper">
+        <img src="https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=900&q=80" alt="MacBook" loading="lazy" />
+      </div>
+      <div class="about-badge">
+        <i class="fab fa-apple"></i>
+        <div class="badge-text">
+          <strong>MacHub</strong>
+          <span>Launched & Growing </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══ PRODUCTS ══════════════════════════════════════ -->
+  <section class="products" id="products">
+    <div class="products-header">
+      <div>
+        <div class="sneak-peek-bar reveal">
+          <span class="sp-pill"><i class="fas fa-eye"></i> Sneak Peek</span>
+          <div class="sp-line"></div>
+        </div>
+        <p class="section-label reveal">Our Collection</p>
+        <h2 class="section-title reveal">Find Your<br>Perfect Mac</h2>
+      </div>
+      <p class="section-sub reveal" style="max-width:340px;">Latest stocks updated regularly. Follow our pages for new arrivals and deals.</p>
+    </div>
+
+    <div class="products-grid reveal-stagger">
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600&q=80" alt="MacBook Air" loading="lazy" />
+        </div>
+        <div class="product-info">
+          <span class="product-tag hot">Best Seller</span>
+          <h3>MacBook Air</h3>
+          <p>Incredibly thin, impossibly fast. The M-chip MacBook Air handles everything with all-day battery life.</p>
+          <div class="product-footer">
+            <a href="https://wa.me/94711818880" target="_blank" class="product-cta">
+              Inquire Now <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=600&q=80" alt="MacBook Pro" loading="lazy" />
+        </div>
+        <div class="product-info">
+          <span class="product-tag hot">Pro Pick</span>
+          <h3>MacBook Pro</h3>
+          <p>Supercharged for professionals. M-chip Pro delivers unmatched performance for creative workflows.</p>
+          <div class="product-footer">
+            <a href="https://wa.me/94711818880" target="_blank" class="product-cta">
+              Inquire Now <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600&q=80" alt="MacBook" loading="lazy" />
+        </div>
+        <div class="product-info">
+          <span class="product-tag">In Stock</span>
+          <h3>Previous Gen Macs</h3>
+          <p>Quality pre-owned and previous-generation MacBooks — great performance at a smarter price point.</p>
+          <div class="product-footer">
+            <a href="https://wa.me/94711818880" target="_blank" class="product-cta">
+              Inquire Now <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=600&q=80" alt="Mac Accessories" loading="lazy" />
+        </div>
+        <div class="product-info">
+          <span class="product-tag">New</span>
+          <h3>Accessories</h3>
+          <p>Cases, hubs, chargers, and more. Everything you need to get the most out of your Mac.</p>
+          <div class="product-footer">
+            <a href="https://wa.me/94711818880" target="_blank" class="product-cta">
+              Inquire Now <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=600&q=80" alt="iMac" loading="lazy" />
+        </div>
+        <div class="product-info">
+          <span class="product-tag">Available</span>
+          <h3>iMac</h3>
+          <p>The all-in-one desktop reimagined. Stunning Retina display, slim design, powerful M-chip performance.</p>
+          <div class="product-footer">
+            <a href="https://wa.me/94711818880" target="_blank" class="product-cta">
+              Inquire Now <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=600&q=80" alt="iPad" loading="lazy" />
+        </div>
+        <div class="product-info">
+          <span class="product-tag hot">New Arrival</span>
+          <h3>iPad</h3>
+          <p>Versatile, powerful, and portable. From iPad Air to iPad Pro — the perfect companion for work and creativity.</p>
+          <div class="product-footer">
+            <a href="https://wa.me/94711818880" target="_blank" class="product-cta">
+              Inquire Now <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══ WHY US ════════════════════════════════════════ -->
+  <section class="why" id="why">
+    <div style="text-align:center; max-width:640px; margin:0 auto;">
+      <p class="section-label reveal">Why MacHub</p>
+      <h2 class="section-title reveal">The MacHub<br>Difference</h2>
+      <p class="section-sub reveal" style="margin: 0 auto;">We don't just sell Macs — we help you find the right one, at the right price, with real support.</p>
+    </div>
+
+    <div class="why-grid reveal-stagger">
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-shield-halved"></i></div>
+        <h3>100% Authentic</h3>
+        <p>Every device is genuine Apple hardware. No counterfeits, no surprises — just real Macs you can trust.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fab fa-whatsapp"></i></div>
+        <h3>Instant WhatsApp Support</h3>
+        <p>Have a question? Message us on WhatsApp and get a real human response — fast.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-tags"></i></div>
+        <h3>Best Prices in LK</h3>
+        <p>Competitive pricing with regular promotions and deals. Get the most Mac for your money.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-rotate"></i></div>
+        <h3>Regular Stock Updates</h3>
+        <p>Fresh inventory added consistently. Follow us on social media to stay ahead of new arrivals.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-star"></i></div>
+        <h3>5-Star Rated &nbsp;</h3>
+        <p>Hundreds of happy customers have rated us 5 stars on Google. See for yourself.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-headset"></i></div>
+        <h3>Expert Guidance</h3>
+        <p>Not sure which Mac to pick? We'll help you choose the perfect model for your needs and budget.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══ GOOGLE REVIEW CTA ══════════════════════════════ -->
+  <section class="review-cta">
+    <p class="section-label reveal" style="margin-bottom:24px;">Happy Customer?</p>
+    <a href="https://g.page/r/CWzjXb7NxiweEBM/review" target="_blank" class="review-box reveal">
+      <div>
+        <div class="stars">★★★★★</div>
+        <div style="margin-top:6px; font-size:0.78rem; color:var(--gray4); letter-spacing:0.05em; text-transform:uppercase;">Google Reviews</div>
+      </div>
+      <div class="review-box-text">
+        <h3>Love your MacBook?</h3>
+        <p>Drop us a review on Google — it means the world to us!</p>
+      </div>
+      <div class="review-btn">
+        <i class="fab fa-google"></i> Leave a Review
+      </div>
+    </a>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══ SOCIAL ═════════════════════════════════════════ -->
+  <section class="social-section">
+    <p class="section-label reveal">Stay Connected</p>
+    <h2 class="section-title reveal">Follow Us for<br>Deals & Updates</h2>
+    <p class="section-sub reveal" style="margin: 16px auto 0; text-align:center;">New arrivals, offers, and promotions posted regularly across our social channels.</p>
+
+    <div class="social-links reveal-stagger">
+      <a href="https://www.facebook.com/machublk" target="_blank" class="social-link fb">
+        <i class="fab fa-facebook"></i> Facebook
+      </a>
+      <a href="https://www.instagram.com/machublk" target="_blank" class="social-link ig">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+      <a href="https://www.tiktok.com/@machublk" target="_blank" class="social-link tt">
+        <i class="fab fa-tiktok"></i> TikTok
+      </a>
+      <a href="https://wa.me/94711818880" target="_blank" class="social-link" style="color:var(--white);">
+        <i class="fab fa-whatsapp" style="color:#25d366;"></i> WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══ CONTACT ════════════════════════════════════════ -->
+  <section class="contact" id="contact">
+    <div>
+      <p class="section-label reveal">Get in Touch</p>
+      <h2 class="section-title reveal">Let's Find<br>Your Mac</h2>
+      <p class="section-sub reveal">Reach us through any channel — we're here to help you pick the right device.</p>
+
+      <div class="contact-info-items reveal-stagger">
+        <a href="https://wa.me/94711818880" target="_blank" class="contact-item">
+          <div class="contact-icon whatsapp"><i class="fab fa-whatsapp"></i></div>
+          <div class="contact-item-text">
+            <strong>WhatsApp</strong>
+            <span>Chat with us instantly</span>
+          </div>
+          <i class="fas fa-arrow-right" style="margin-left:auto; color:var(--gray4); font-size:0.85rem;"></i>
+        </a>
+
+        <a href="tel:0711818880" class="contact-item">
+          <div class="contact-icon phone"><i class="fas fa-phone"></i></div>
+          <div class="contact-item-text">
+            <strong>Phone</strong>
+            <span>071 1818 880</span>
+          </div>
+          <i class="fas fa-arrow-right" style="margin-left:auto; color:var(--gray4); font-size:0.85rem;"></i>
+        </a>
+
+        <a href="mailto:infomachub@gmail.com" class="contact-item">
+          <div class="contact-icon email"><i class="fas fa-envelope"></i></div>
+          <div class="contact-item-text">
+            <strong>Email</strong>
+            <span>infomachub@gmail.com</span>
+          </div>
+          <i class="fas fa-arrow-right" style="margin-left:auto; color:var(--gray4); font-size:0.85rem;"></i>
+        </a>
+
+        <a href="https://share.google/47p4EbXGrYRsVDHj4" target="_blank" class="contact-item">
+          <div class="contact-icon maps"><i class="fas fa-location-dot"></i></div>
+          <div class="contact-item-text">
+            <strong>Find Us</strong>
+            <span>View on Google Maps</span>
+          </div>
+          <i class="fas fa-arrow-right" style="margin-left:auto; color:var(--gray4); font-size:0.85rem;"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Inquiry Form -->
+    <div class="contact-form-wrapper reveal">
+      <h3>Send an Inquiry</h3>
+      <p>Tell us what you're looking for and we'll get back to you ASAP.</p>
+
+      <form id="inquiryForm" onsubmit="handleForm(event)">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" placeholder="e.g. Kasun Perera" required />
+        </div>
+        <div class="form-group">
+          <label>Phone / WhatsApp</label>
+          <input type="tel" placeholder="e.g. 077 123 4567" required />
+        </div>
+        <div class="form-group">
+          <label>Interested In</label>
+          <select>
+            <option value="">Select a product...</option>
+            <option>MacBook Air (M1 / M2 / M3)</option>
+            <option>MacBook Pro (M1 / M2 / M3)</option>
+            <option>iMac</option>
+            <option>iPad (Air / Pro / Mini)</option>
+            <option>Mac Mini</option>
+            <option>Pre-owned / Previous Gen</option>
+            <option>Accessories</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message (optional)</label>
+          <textarea placeholder="Any specific specs, budget range, or questions..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">
+          <i class="fab fa-whatsapp"></i> Send via WhatsApp
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <img src="MacHub_ Secondary Logo image Transparent.png" class="logo-icon" alt="MacHub Logo" />
+          <div class="logo-text-wrap">
+        <span class="logo-text">MacHub</span>
+        <span class="logo-slogan">-Power Your Dreams-</span>
+      </div>
+        </a>
+        <p>Your trusted destination for premium Apple Mac devices in Sri Lanka. Authentic products, expert advice, and real support.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#why">Why MacHub</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="https://g.page/r/CWzjXb7NxiweEBM/review" target="_blank">Leave a Review</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <ul>
+          <li><a href="https://www.facebook.com/machublk" target="_blank"><i class="fab fa-facebook" style="margin-right:8px; color:#1877f2;"></i>Facebook</a></li>
+          <li><a href="https://www.instagram.com/machublk" target="_blank"><i class="fab fa-instagram" style="margin-right:8px; color:#e1306c;"></i>Instagram</a></li>
+          <li><a href="https://www.tiktok.com/@machublk" target="_blank"><i class="fab fa-tiktok" style="margin-right:8px;"></i>TikTok</a></li>
+          <li><a href="https://wa.me/94711818880" target="_blank"><i class="fab fa-whatsapp" style="margin-right:8px; color:#25d366;"></i>WhatsApp</a></li>
+          <li><a href="mailto:infomachub@gmail.com"><i class="fas fa-envelope" style="margin-right:8px;"></i>Email Us</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 MacHub. All rights reserved.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/machublk" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/machublk" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@machublk" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="https://wa.me/94711818880" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══ FLOATING WHATSAPP ══════════════════════════════ -->
+  <a href="https://wa.me/94711818880" target="_blank" class="wa-float" title="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Toast -->
+  <div class="toast" id="toast">
+    <i class="fab fa-whatsapp"></i>
+    <span>Opening WhatsApp...</span>
+  </div>
+
+
+  <!-- ═══ JAVASCRIPT ════════════════════════════════════ -->
+  <script>
+    /* ── Hero Slider ── */
+    const slides = document.querySelectorAll('.slide');
+    const dots   = document.querySelectorAll('.dot');
+    let current  = 0;
+    let timer;
+
+    function goToSlide(n) {
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      current = (n + slides.length) % slides.length;
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+    }
+
+    function nextSlide() { goToSlide(current + 1); }
+
+    function startSlider() {
+      timer = setInterval(nextSlide, 5000);
+    }
+
+    // pause on hover
+    document.querySelector('.hero').addEventListener('mouseenter', () => clearInterval(timer));
+    document.querySelector('.hero').addEventListener('mouseleave', startSlider);
+
+    startSlider();
+
+    /* ── Countdown Timer ── */
+    // Set your launch date here: YYYY, MM-1 (0-indexed), DD, HH, MM, SS
+    const launchDate = new Date('2026-05-28T00:00:00');
+
+    function updateCountdown() {
+      const now  = new Date();
+      const diff = launchDate - now;
+
+      if (diff <= 0) {
+        document.getElementById('cd-days').textContent  = '00';
+        document.getElementById('cd-hours').textContent = '00';
+        document.getElementById('cd-mins').textContent  = '00';
+        document.getElementById('cd-secs').textContent  = '00';
+        return;
+      }
+
+      const pad = n => String(Math.floor(n)).padStart(2, '0');
+
+      const days  = diff / (1000 * 60 * 60 * 24);
+      const hours = (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60);
+      const mins  = (diff % (1000 * 60 * 60))      / (1000 * 60);
+      const secs  = (diff % (1000 * 60))            / 1000;
+
+      document.getElementById('cd-days').textContent  = pad(days);
+      document.getElementById('cd-hours').textContent = pad(hours);
+      document.getElementById('cd-mins').textContent  = pad(mins);
+      document.getElementById('cd-secs').textContent  = pad(secs);
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    /* ── Navbar scroll effect ── */
+    window.addEventListener('scroll', () => {
+      const nb = document.getElementById('navbar');
+      nb.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    /* ── Mobile menu ── */
+    function toggleMenu() {
+      const hb = document.getElementById('hamburger');
+      const mm = document.getElementById('mobileMenu');
+      hb.classList.toggle('open');
+      mm.classList.toggle('open');
+    }
+
+    function closeMenu() {
+      document.getElementById('hamburger').classList.remove('open');
+      document.getElementById('mobileMenu').classList.remove('open');
+    }
+
+    /* ── Scroll reveal ── */
+    const revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealEls.forEach(el => observer.observe(el));
+
+    /* ── Form → WhatsApp ── */
+    function handleForm(e) {
+      e.preventDefault();
+      const form   = e.target;
+      const name   = form.querySelector('input[type="text"]').value.trim();
+      const phone  = form.querySelector('input[type="tel"]').value.trim();
+      const product = form.querySelector('select').value || 'Not specified';
+      const message = form.querySelector('textarea').value.trim();
+
+      const text = encodeURIComponent(
+        `Hi MacHub! 👋\n\n` +
+        `*Name:* ${name}\n` +
+        `*Phone:* ${phone}\n` +
+        `*Interested in:* ${product}\n` +
+        (message ? `*Message:* ${message}` : '')
+      );
+
+      // Show toast
+      const toast = document.getElementById('toast');
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+
+      setTimeout(() => {
+        window.open(`https://wa.me/94711818880?text=${text}`, '_blank');
+      }, 500);
+    }
+
+    /* ── Smooth anchor scroll with offset ── */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function (e) {
+        const id = this.getAttribute('href').slice(1);
+        const target = document.getElementById(id);
+        if (!target) return;
+        e.preventDefault();
+        const top = target.getBoundingClientRect().top + window.scrollY - 75;
+        window.scrollTo({ top, behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>
